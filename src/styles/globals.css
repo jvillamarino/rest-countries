@@ -3,16 +3,37 @@
 @tailwind utilities;
 
 @layer base {
-  :root {
-    --dark-blue: 209, 23%, 22%;
-    --dark-blue-background: 207, 26%, 17%;
-    --light-blue-text: 200, 15%, 8%;
-    --dark-gray: 0, 0%, 52%;
-    --light-gray-background: 0, 0%, 98%;
-    --white: 0, 0%, 100%;
-  }
+    :root {
+        --dark-blue: 209, 23%, 22%;
+        --dark-blue-background: 207, 26%, 17%;
+        --light-blue-text: 200, 15%, 8%;
+        --dark-gray: 0, 0%, 52%;
+        --light-gray-background: 0, 0%, 98%;
+        --white: 0, 0%, 100%;
+    }
 
-  body {
-    @apply bg-lightGrayBg dark:bg-darkBlueBg;
-  }
+    body {
+        @apply bg-lightGrayBg dark:bg-darkBlueBg;
+    }
+
+    p,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        @apply text-lightBlueText dark:text-white;
+    }
+
+    p {
+        @apply text-sm;
+    }
+    p.detail {
+        @apply text-base;
+    }
+
+    .main-container {
+        @apply flex min-h-screen flex-col items-center p-8 md:p-12 lg:p-24;
+    }
 }

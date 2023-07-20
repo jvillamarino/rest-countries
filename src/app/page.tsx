@@ -1,9 +1,13 @@
-import Image from 'next/image';
+import { Country } from '../models/country.interface';
+import CountryList from '../components/country-components/CountryList';
+import { getAllCountries } from './api/country.api';
 
-export default function Home() {
-  return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      Hello world!
-    </main>
-  );
+export default async function Home() {
+    const countries: Country[] = await getAllCountries();
+
+    return (
+        <main className='main-container'>
+            <CountryList countries={countries} />
+        </main>
+    );
 }

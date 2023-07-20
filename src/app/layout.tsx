@@ -7,19 +7,19 @@ import { ThemeProviderComponent } from './providers/ThemeProvider';
 const NunitoSans = Nunito_Sans({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Rest Countries',
-  description: 'Query for countries',
+    title: 'Rest Countries',
+    description: 'Query for countries',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  return (
-    <html lang="en">
-      <body className={NunitoSans.className}>
-        <ThemeProviderComponent>
-          <Header />
-          {children}
-        </ThemeProviderComponent>
-      </body>
-    </html>
-  );
+    return (
+        <html lang='en'>
+            <body className={NunitoSans.className}>
+                <ThemeProviderComponent>
+                    <Header />
+                    {children}
+                </ThemeProviderComponent>
+            </body>
+        </html>
+    );
 }
