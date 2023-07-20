@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --dark-blue: 209, 23%, 22%;
+    --dark-blue-background: 207, 26%, 17%;
+    --light-blue-text: 200, 15%, 8%;
+    --dark-gray: 0, 0%, 52%;
+    --light-gray-background: 0, 0%, 98%;
+    --white: 0, 0%, 100%;
+  }
+
+  body {
+    @apply bg-lightGrayBg dark:bg-darkBlueBg;
+  }
+}
