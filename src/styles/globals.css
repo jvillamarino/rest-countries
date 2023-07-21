@@ -15,6 +15,9 @@
     body {
         @apply bg-lightGrayBg dark:bg-darkBlueBg;
     }
+    * {
+        @apply transition-all duration-75;
+    }
 
     p,
     h1,
@@ -29,11 +32,15 @@
     p {
         @apply text-sm;
     }
-    p.detail {
+    p.paragraph-16 {
         @apply text-base;
     }
 
     .main-container {
         @apply flex min-h-screen flex-col items-center p-8 md:p-12 lg:p-24;
+    }
+
+    .main-container--left-items {
+        @apply items-start gap-8 md:gap-12 lg:gap-24;
     }
 }

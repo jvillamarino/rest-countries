@@ -11,10 +11,9 @@ export async function getAllCountries(): Promise<Country[]> {
     return response.json();
 }
 
-export async function getCountryByName(name: string): Promise<Country> {
-    const response: Response = await apiProviderFunction(
-        `/name/${name}?fields=flags,name,population,region,subregion,capital,tld,currencies,languages,borders`,
-    );
+export async function getCountryByName(name: string, fields?: string): Promise<Country> {
+    const queryFields: string = fields ?? 'flags,name,population,region,subregion,capital,tld,currencies,languages,borders';
+    const response: Response = await apiProviderFunction(`/name/${name}?fields=${queryFields}`);
 
     return response.json().then(data => {
         if (data.length > 0) return data[0];

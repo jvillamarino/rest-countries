@@ -1,0 +1,29 @@
+.country-detail {
+    @apply w-full h-full flex flex-col md:flex-row items-start sm:items-center gap-6;
+}
+.country-image {
+    @apply bg-cover max-h-[250px] sm:max-h-[320px] lg:max-h-[500px] lg:max-w-[650px] lg:w-full mx-auto;
+}
+.country-info {
+    @apply flex flex-auto flex-col justify-between gap-6 md:py-8 lg:px-6 xl:py-20 2xl:pr-40 ;
+}
+
+.country-info__title {
+    @apply text-2xl font-extrabold;
+}
+
+.country-info-container {
+    @apply flex flex-col sm:flex-row sm:justify-between gap-10;
+}
+.country-info__borders {
+    @apply xl:mt-16;
+}
+
+.country-info-container__left,
+.country-info-container__right {
+    @apply space-y-2;
+}
+
+.border-country {
+    @apply shadow rounded px-4 py-1 ml-2 text-xs bg-white dark:bg-darkBlue;
+}
