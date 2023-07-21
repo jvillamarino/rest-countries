@@ -3,6 +3,7 @@ import '../styles/globals.css';
 import type { Metadata } from 'next';
 import { Nunito_Sans } from 'next/font/google';
 import { ThemeProviderComponent } from '../providers/ThemeProvider';
+import { Analytics } from '@vercel/analytics/react';
 
 const NunitoSans = Nunito_Sans({ subsets: ['latin'] });
 
@@ -18,6 +19,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 <ThemeProviderComponent>
                     <Header />
                     {children}
+                    <Analytics />
                 </ThemeProviderComponent>
             </body>
         </html>
