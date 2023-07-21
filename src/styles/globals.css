@@ -37,7 +37,7 @@
     }
 
     .main-container {
-        @apply flex min-h-screen flex-col items-center p-8 md:p-12 lg:p-24;
+        @apply flex min-h-screen flex-col items-center p-8 md:p-12 lg:p-24 lg:pt-16 gap-10;
     }
 
     .main-container--left-items {

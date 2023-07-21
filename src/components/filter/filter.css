@@ -1,0 +1,44 @@
+.filter {
+    @apply flex w-full;
+}
+
+.filter-container {
+    @apply flex flex-col sm:flex-row flex-auto justify-between items-center gap-6;
+}
+
+.filter-input-container {
+    @apply sm:max-w-[400px] flex-initial w-full;
+}
+
+.filter-input__label {
+    @apply mb-2 text-sm font-medium text-darkBlue sr-only dark:text-white;
+}
+
+.filter-input__icon {
+    @apply absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none text-darkGray dark:text-white;
+}
+
+.filter-input {
+    @apply shadow block w-full p-4 pl-10 text-sm  rounded-lg bg-white dark:bg-darkBlue dark:text-white outline-none;
+}
+
+.filter-button-container {
+    @apply w-full flex-initial sm:w-auto;
+}
+
+.filter-button {
+    @apply w-full sm:w-52 flex items-center justify-between;
+    @apply shadow text-darkGray bg-white dark:bg-darkBlue dark:text-white outline-none rounded-lg text-sm px-4 py-4 text-center;
+}
+
+.filter-button-dropdown {
+    @apply absolute bg-white divide-y rounded-lg shadow w-52 px-2 dark:bg-darkBlue mt-1 z-10;
+}
+
+.filter-button-dropdown--hidden {
+    @apply hidden;
+}
+
+.filter-dropdown-list {
+    @apply py-2 text-sm text-darkGray dark:text-white;
+}

@@ -1,5 +1,5 @@
 import { getCountryByName } from '@/app/api/country.api';
-import { BackButton } from '@/components/buttons/BackButton';
+import { BackButton } from '@/components/buttons';
 import { Country } from '@/models/country.interface';
 import { CountryDetail } from './components/CountryDetail';
 
