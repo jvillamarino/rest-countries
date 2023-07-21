@@ -1,5 +1,5 @@
 .filter {
-    @apply flex w-full;
+    @apply flex w-full max-w-[1440px];
 }
 
 .filter-container {
@@ -28,7 +28,7 @@
 
 .filter-button {
     @apply w-full sm:w-52 flex items-center justify-between;
-    @apply shadow text-darkGray bg-white dark:bg-darkBlue dark:text-white outline-none rounded-lg text-sm px-4 py-4 text-center;
+    @apply shadow text-darkBlue bg-white dark:bg-darkBlue dark:text-white outline-none rounded-lg text-sm px-4 py-4 text-center;
 }
 
 .filter-button-dropdown {
@@ -41,4 +41,7 @@
 
 .filter-dropdown-list {
     @apply py-2 text-sm text-darkGray dark:text-white;
+}
+.filter-dropdown-list__item {
+    @apply block px-4 py-2;
 }

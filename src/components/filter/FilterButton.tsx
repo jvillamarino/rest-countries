@@ -1,15 +1,23 @@
 'use client';
 
+import { getAllCountries } from '@/app/api/country.api';
+import { Country } from '@/models';
 import Link from 'next/link';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { BiSolidChevronDown, BiSolidChevronUp } from 'react-icons/bi';
 
-interface Props {
-    regions: string[];
-}
-
-export function FilterDropdownButton({ regions }: Props) {
+export function FilterDropdownButton() {
     const [isOpen, setOpen] = useState(false);
+    const [regions, setRegions] = useState<string[]>([]);
+
+    useEffect(() => {
+        async function getData() {
+            const countries: Country[] = await getAllCountries();
+            const mapedRegions = Array.from(countries.reduce((setAcc, country) => setAcc.add(country.region), new Set<string>())).sort();
+            setRegions(mapedRegions);
+        }
+        getData();
+    }, []);
 
     return (
         <div className='filter-button-container'>
@@ -23,7 +31,7 @@ export function FilterDropdownButton({ regions }: Props) {
                     <ul className='filter-dropdown-list' aria-labelledby='dropdownHoverButton'>
                         {regions.map(region => (
                             <li key={region}>
-                                <Link href={`/?region=${region}`} className='block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white'>
+                                <Link onClick={() => setOpen(false)} href={`/?region=${region}`} className='filter-dropdown-list__item'>
                                     {region}
                                 </Link>
                             </li>

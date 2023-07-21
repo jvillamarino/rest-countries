@@ -2,15 +2,9 @@ import { getCountryByName } from '@/app/api/country.api';
 import { BackButton } from '@/components/buttons';
 import { Country } from '@/models/country.interface';
 import { CountryDetail } from './components/CountryDetail';
+import { PropsParams } from '@/models';
 
-interface Props {
-    params: {
-        name: string;
-    };
-    searchParams: { [key: string]: string | string[] | undefined };
-}
-
-export async function generateMetadata({ params: { name } }: Props) {
+export async function generateMetadata({ params: { name } }: PropsParams) {
     const country: Country = await getCountryByName(name, 'flags');
     return {
         title: decodeURIComponent(name),
@@ -18,10 +12,10 @@ export async function generateMetadata({ params: { name } }: Props) {
     };
 }
 
-export default async function CountryPage({ params: { name } }: Props) {
+export default async function CountryPage({ params: { name } }: PropsParams) {
     const country: Country = await getCountryByName(name);
     return (
-        <main className='main-container main-container--left-items'>
+        <main className='main-container main-container--detail-page'>
             <BackButton />
             <CountryDetail country={country} />
         </main>

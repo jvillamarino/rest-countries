@@ -1,15 +1,15 @@
 import { Country } from '../models/country.interface';
 import CountryList from '../components/country-components/CountryList';
-import { getAllCountries } from './api/country.api';
+import { getAllCountries, getCountriesByRegion } from './api/country.api';
 import { FilterComponent } from '@/components/filter';
+import { PropsParams } from '@/models';
 
-export default async function Home() {
-    const countries: Country[] = await getAllCountries();
-    const regions = Array.from(countries.reduce((setAcc, country) => setAcc.add(country.region), new Set<string>())).sort();
+export default async function Home({ searchParams: { region } }: PropsParams) {
+    const countries: Country[] = region ? await getCountriesByRegion(region as string) : await getAllCountries();
 
     return (
         <main className='main-container'>
-            <FilterComponent regions={regions} />
+            <FilterComponent />
             <CountryList countries={countries} />
         </main>
     );

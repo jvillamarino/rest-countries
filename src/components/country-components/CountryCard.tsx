@@ -11,7 +11,9 @@ export function CountryCard({ country }: { country: Country }) {
             </Link>
 
             <div className='card-body'>
-                <h3 className='card-body__title'>{country.name.common}</h3>
+                <Link href={`/country/${country.name.official}`}>
+                    <h3 className='card-body__title'>{country.name.common}</h3>
+                </Link>
 
                 <div className='card-paragraph-container'>
                     <p className='card-paragraph'>
