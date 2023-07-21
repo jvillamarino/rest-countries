@@ -1,0 +1,27 @@
+.country-list-grid {
+    @apply grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6 lg:gap-y-20 items-stretch max-w-[1440px] w-full;
+}
+
+.country-grid-item {
+    @apply md:max-w-[290px];
+}
+
+.country-card {
+    @apply rounded-md shadow w-full h-full bg-white dark:bg-darkBlue;
+}
+
+.country-card__image {
+    @apply rounded-t-md sm:h-40 bg-cover min-w-[320px] w-full sm:min-w-full;
+}
+
+.card-body {
+    @apply p-5;
+}
+
+.card-body__title {
+    @apply mb-2 text-xl font-bold tracking-tight;
+}
+
+.card-paragraph-container {
+    @apply mb-4;
+}

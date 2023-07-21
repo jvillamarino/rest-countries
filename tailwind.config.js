@@ -5,7 +5,16 @@ module.exports = {
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
+  darkMode: 'class',
   theme: {
+    colors: {
+      darkBlue: 'hsl(var(--dark-blue))',
+      darkBlueBg: 'hsl(var(--dark-blue-background))',
+      lightBlueText: 'hsl(var(--light-blue-text))',
+      darkGray: 'hsl(var(--dark-gray))',
+      lightGrayBg: 'hsl(var(--light-gray-background))',
+      white: 'hsl(var(--white))'
+    },
     extend: {
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
@@ -14,5 +23,6 @@ module.exports = {
       },
     },
   },
+
   plugins: [],
 }

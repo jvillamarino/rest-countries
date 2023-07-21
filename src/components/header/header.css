@@ -1,0 +1,16 @@
+.header {
+    @apply bg-white dark:bg-darkBlue  px-4 md:px-24 py-6 shadow-md;
+}
+
+.header-nav {
+    @apply flex flex-wrap justify-between items-center mx-auto max-w-[1440px];
+    /* max-w-screen-xl */
+}
+
+.header-nav__title {
+    @apply text-lightBlueText dark:text-white font-semibold text-xl sm:text-2xl;
+}
+
+.nav-theme-button {
+    @apply flex items-center gap-2 text-lightBlueText dark:text-white;
+}
