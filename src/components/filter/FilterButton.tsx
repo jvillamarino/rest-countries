@@ -1,6 +1,6 @@
 'use client';
 
-import { getAllCountries } from '@/app/api/country.api';
+import { getAllCountries } from '@/api/country.api';
 import { Country } from '@/models';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';

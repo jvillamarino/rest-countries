@@ -2,7 +2,7 @@ import { Header } from '@/components/header/Header';
 import '../styles/globals.css';
 import type { Metadata } from 'next';
 import { Nunito_Sans } from 'next/font/google';
-import { ThemeProviderComponent } from './providers/ThemeProvider';
+import { ThemeProviderComponent } from '../providers/ThemeProvider';
 
 const NunitoSans = Nunito_Sans({ subsets: ['latin'] });
 

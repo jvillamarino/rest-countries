@@ -1,5 +1,5 @@
-import { API_URL } from '../config';
-import { Country } from '../../models/country.interface';
+import { API_URL } from './config';
+import { Country } from '../models/country.interface';
 
 /* DETAIL_FIELDS - A string of comma separated fields to be included in the detail query.*/
 const DETAIL_FIELDS = 'flags,name,population,region,subregion,capital,tld,currencies,languages,borders';
@@ -55,17 +55,17 @@ export async function getCountryByName(name: string, fields?: string): Promise<C
 }
 
 /**
- * getCountriesByRegion
+ * filterCountryBy
  *
- * Query a list of countries by region from the REST Countries API.
+ * Query a list of countries by region or name from the REST Countries API.
  *
  * @export
- * @param {string} region
+ * @param {string} path
  * @param {string} [fields]
  * @return {*}  {Promise<Country[]>}
  */
-export async function getCountriesByRegion(region: string, fields?: string): Promise<Country[]> {
+export async function filterCountryBy(path: string, value: string, fields?: string): Promise<Country[]> {
     const queryFields: string = fields ?? DETAIL_FIELDS;
-    const response: Response = await apiProviderFunction(`/region/${region}?fields=${queryFields}`);
+    const response: Response = await apiProviderFunction(`/${path}/${value}?fields=${queryFields}`);
     return response.json();
 }
