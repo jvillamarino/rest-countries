@@ -5,7 +5,8 @@ import { FilterComponent } from '@/components/filter';
 import { PropsParams } from '@/models';
 import NotFound from '@/components/not-found/NotFound';
 
-export const dynamic = 'force-dynamic';
+// export const dynamic = 'force-dynamic';
+export const revalidate = 0;
 
 export default async function Home({ searchParams }: PropsParams) {
     const { key, value } = Object.entries(searchParams).reduce((_, [key, value]) => ({ key, value }), {}) as { key: string; value: string };
