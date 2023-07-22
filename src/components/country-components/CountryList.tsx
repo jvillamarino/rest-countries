@@ -10,15 +10,23 @@ interface Props {
 }
 
 export default function CountryList({ countries }: Props) {
+    const [currentCountries, setCurrentCountries] = useState<Country[]>([]);
     const [data, setData] = useState<Country[]>([]);
     const [startPosition, setStartPosition] = useState<number>(0);
     const [showLoadMore, setShowLoadMore] = useState<boolean>(true);
 
     useEffect(() => {
-        const slice = countries.slice(startPosition, startPosition + 10);
+        setCurrentCountries(countries);
+        setData([]);
+        setStartPosition(0);
+        setShowLoadMore(countries.length > 10);
+    }, [countries]);
+
+    useEffect(() => {
+        const slice = currentCountries.slice(startPosition, startPosition + 10);
         if (slice.length) setData(data => [...data, ...slice]);
         if (!slice.length) setShowLoadMore(false);
-    }, [startPosition, countries]);
+    }, [startPosition, currentCountries]);
 
     const handleLoadMore = () => {
         setStartPosition(startPosition + 10);
