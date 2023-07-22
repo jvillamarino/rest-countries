@@ -4,7 +4,7 @@ import './buttons.css';
 
 export function BackButton() {
     return (
-        <Link href='/' className='back-button'>
+        <Link href='/' className='button'>
             <BiArrowBack />
             Back
         </Link>

@@ -1,3 +1,3 @@
-.back-button {
+.button {
     @apply flex items-center gap-2 rounded-md shadow text-lightBlueText dark:text-white bg-white dark:bg-darkBlue px-6 py-2;
 }

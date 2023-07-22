@@ -11,7 +11,7 @@
 }
 
 .country-card__image {
-    @apply rounded-t-md sm:h-40 bg-cover min-w-[320px] w-full sm:min-w-full;
+    @apply rounded-t-md sm:h-40 bg-cover min-w-[320px] max-h-[218px] w-full sm:min-w-full;
 }
 
 .card-body {
