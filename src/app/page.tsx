@@ -3,6 +3,7 @@ import CountryList from '../components/country-components/CountryList';
 import { getAllCountries, filterCountryBy } from '../api/country.api';
 import { FilterComponent } from '@/components/filter';
 import { PropsParams } from '@/models';
+import NotFound from '@/components/not-found/NotFound';
 
 export const dynamic = 'force-dynamic';
 
@@ -13,7 +14,7 @@ export default async function Home({ searchParams }: PropsParams) {
     return (
         <main className='main-container'>
             <FilterComponent />
-            <CountryList countries={countries} />
+            {countries.length ? <CountryList countries={countries} /> : <NotFound />}
         </main>
     );
 }

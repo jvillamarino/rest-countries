@@ -67,5 +67,7 @@ export async function getCountryByName(name: string, fields?: string): Promise<C
 export async function filterCountryBy(path: string, value: string, fields?: string): Promise<Country[]> {
     const queryFields: string = fields ?? DETAIL_FIELDS;
     const response: Response = await apiProviderFunction(`/${path}/${value}?fields=${queryFields}`);
-    return response.json();
+    return response.json().then(countries => {
+        return Array.isArray(countries) ? countries : [];
+    });
 }
