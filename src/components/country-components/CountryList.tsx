@@ -19,13 +19,16 @@ export default function CountryList({ countries }: Props) {
         setCurrentCountries(countries);
         setData([]);
         setStartPosition(0);
-        setShowLoadMore(countries.length > 10);
     }, [countries]);
 
     useEffect(() => {
         const slice = currentCountries.slice(startPosition, startPosition + 10);
-        if (slice.length) setData(data => [...data, ...slice]);
-        if (!slice.length) setShowLoadMore(false);
+        if (slice.length) {
+            setData(data => [...data, ...slice]);
+            setShowLoadMore(true);
+        }
+
+        if (!slice.length || slice.length < 10) setShowLoadMore(false);
     }, [startPosition, currentCountries]);
 
     const handleLoadMore = () => {
